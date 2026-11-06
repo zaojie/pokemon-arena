@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#182e28"><title>常青秘境 · 宝可梦生存挑战</title>
+<link rel="icon" href="assets/4.png" type="image/png">
+<link rel="stylesheet" href="arena.css">
+</head><body data-mode="ready" data-partner="4">
+<canvas id="arena" aria-label="第三人称森林战场"></canvas>
+<main id="hud">
+  <header><div class="badge-mark" aria-hidden="true">ϟ</div><div><small>POKÉMON &nbsp;/&nbsp; FIELD EXPEDITION</small><b>常青森林</b></div></header>
+  <div id="xp"><span id="xpText"></span><progress id="xpMeter" value="0" max="1" aria-label="经验"></progress></div>
+  <section class="wave-status"><div id="wave"></div><div id="waveDots"></div><small id="score"></small></section>
+  <div class="tools"><button id="sound" aria-label="切换音效">音效 开</button><button id="pauseGame" aria-label="暂停游戏">Ⅱ</button></div>
+  <div id="boss" hidden></div>
+  <div class="radar"><canvas id="map" width="120" height="120"></canvas></div>
+  <div id="reticle" aria-hidden="true"><i></i></div>
+  <div id="damageFlash"></div>
+  <section class="card" id="panel">
+    <span class="panel-label" id="panelLabel">VIRIDIAN FOREST</span>
+    <h1 id="title">常青秘境</h1><p id="note">穿越五波围攻，在每次休整时选择一项强化。</p>
+    <fieldset id="starterPicker" aria-describedby="starterStyle">
+      <legend>选择出战伙伴</legend>
+      <div class="starter-list">
+        <label><input type="radio" name="starter" value="25" data-starter="25" aria-label="皮卡丘"><img src="assets/25.png" alt=""><span>皮卡丘</span></label>
+        <label><input type="radio" name="starter" value="4" data-starter="4" aria-label="小火龙" checked><img src="assets/4.png" alt=""><span>小火龙</span></label>
+        <label><input type="radio" name="starter" value="7" data-starter="7" aria-label="杰尼龟"><img src="assets/7.png" alt=""><span>杰尼龟</span></label>
+      </div>
+      <div id="evolutionRoute" aria-live="polite"></div>
+      <div class="starter-move" id="starterStyle" aria-live="polite"><b id="starterType">火系</b><span id="starterMove"></span></div>
+    </fieldset>
+    <div id="evolutionDraftHint" hidden>选择本次升级的强化</div><div id="choices"></div><button id="start">进入战斗 ▸</button>
+    <button type="button" id="returnToStarters">结束本局，重选伙伴</button>
+  </section>
+  <section class="health"><div class="portrait"><img id="partnerPortrait" src="assets/4.png" alt=""></div><div class="vitals"><div class="name"><span id="partnerName">小火龙</span> <em id="partnerType">火</em></div><div class="bar"><i id="hp"></i></div><small id="life"></small></div></section>
+  <div id="build"></div><div id="streak" hidden></div>
+  <div id="dodgeState"><b>闪避</b><span id="dodgeTime">就绪</span><i><i id="dodgeGauge"></i></i></div>
+  <div class="help"><span><kbd>WASD</kbd> 移动</span><span>自动攻击</span><span><kbd>左键</kbd> 手动瞄准</span><span><kbd>Shift</kbd> 闪避</span><span><kbd>P</kbd> 暂停</span></div>
+  <div id="touch"><div><button data-key="arrowleft">↶</button><button data-key="w">前进</button><button data-key="s">后退</button><button data-key="arrowright">↷</button></div><button id="touchDodge" type="button">闪避</button></div>
+</main>
+<script src="assets/three.min.js"></script><script src="assets/pokemon-meshes.js"></script><script src="motions.js"></script><script src="models.js"></script><script src="environment.js"></script><script src="run.js"></script><script src="feedback.js"></script><script src="evolution.js"></script><script src="selection.js"></script><script src="evolution-attacks.js"></script><script src="game.js"></script>
+</body></html>

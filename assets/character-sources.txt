@@ -1,0 +1,8 @@
+Character meshes and textures
+https://github.com/Pokemon-3D-api/assets/tree/main/models/opt/regular
+025 Pikachu; 004 Charmander, 005 Charmeleon, 006 Charizard; 007 Squirtle, 008 Wartortle, 009 Blastoise. Pokémon characters belong to their respective owners.
+Local material pass: painted color atlases with procedural skin, keratin, wing membrane and steel, tangent-space normals, packed roughness/metalness and baked vertex occlusion.
+The local model bundle includes the GLTFLoader and SkeletonUtils from three.js r160.
+See three-LICENSE.txt for the three.js license.
+
+HUD sprites: https://github.com/PokeAPI/sprites/tree/master/sprites/pokemon
